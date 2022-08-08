@@ -8,17 +8,17 @@ const matrix = [
 var winner = "?";
 
 
-function changeImage(photoId) {
-    if (counts[photoId] != 1 && winner == "?")  {
+function changeImage(imageId) {
+    if (counts[imageId] != 1 && winner == "?")  {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById(photoId).src = "x.jpg";
-            createMatrix(1, photoId);
+            document.getElementById(imageId).src = "x.jpg";
+            createMatrix(1, imageId);
         } else {
-            document.getElementById(photoId).src = "zero.jpg";
-            createMatrix(2, photoId);
+            document.getElementById(imageId).src = "zero.jpg";
+            createMatrix(2, imageId);
         }
         ++numberOfMoves;
-        counts[photoId] = 1;
+        counts[imageId] = 1;
         gameOver();
     }
 }

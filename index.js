@@ -6,11 +6,10 @@ const matrix = [
     [-1, -1, -1]
 ];
 var winner = "?";
-var OK = 0;
 
 
 function changeImage(photoId) {
-    if (counts[photoId] != 1 && winner =="?")  {
+    if (counts[photoId] != 1 && winner == "?")  {
         if (numberOfMoves % 2 != 0) {
             document.getElementById(photoId).src = "x.jpg";
             createMatrix(1, photoId);

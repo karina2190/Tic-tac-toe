@@ -1,144 +1,48 @@
-var numberOfMoves = 1, ok1 = 0, ok2 = 0, ok3 = 0, ok4 = 0, ok5 = 0, ok6 = 0, ok7 = 0, ok8 = 0, ok9 = 0;
+var numberOfMoves = 1;
+const counts = {};
 const matrix = [
     [-1, -1, -1],
     [-1, -1, -1],
     [-1, -1, -1]
 ];
 var winner = "?";
+var OK = 0;
 
 
-function changeImage1() {
-    if (ok1 == 0 && winner == "?") {
+function changeImage(photoId) {
+    if (counts[photoId] != 1 && winner =="?")  {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("00").src = "x.jpg";
-            matrix[0][0] = 1;
+            document.getElementById(photoId).src = "x.jpg";
+            createMatrix(1, photoId);
         } else {
-            document.getElementById("00").src = "zero.jpg";
-            matrix[0][0] = 2;
+            document.getElementById(photoId).src = "zero.jpg";
+            createMatrix(2, photoId);
         }
         ++numberOfMoves;
-        ++ok1;
-        game_over();
-    }
-}
-
-function changeImage2() {
-    if (ok2 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("01").src = "x.jpg";
-            matrix[0][1] = 1;
-        } else {
-            document.getElementById("01").src = "zero.jpg";
-            matrix[0][1] = 2;
-        }
-        ++numberOfMoves;
-        ++ok2;
-        game_over();
-    }
-}
-
-function changeImage3() {
-    if (ok3 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("02").src = "x.jpg";
-            matrix[0][2] = 1;
-        } else {
-            document.getElementById("02").src = "zero.jpg";
-            matrix[0][2] = 2;
-        }
-        ++numberOfMoves;
-        ++ok3;
-        game_over();
-    }
-}
-
-function changeImage4() {
-    if (ok4 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("10").src = "x.jpg";
-            matrix[1][0] = 1;
-        } else {
-            document.getElementById("10").src = "zero.jpg";
-            matrix[1][0] = 2;
-        }
-        ++numberOfMoves;
-        ++ok4;
-        game_over();
-    }
-}
-
-function changeImage5() {
-    if (ok5 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("11").src = "x.jpg";
-            matrix[1][1] = 1;
-        } else {
-            document.getElementById("11").src = "zero.jpg";
-            matrix[1][1] = 2;
-        }
-        ++numberOfMoves;
-        ++ok5;
-        game_over();
-    }
-}
-
-function changeImage6() {
-    if (ok6 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("12").src = "x.jpg";
-            matrix[1][2] = 1;
-        } else {
-            document.getElementById("12").src = "zero.jpg";
-            matrix[1][2] = 2;
-        }
-        ++numberOfMoves;
-        ++ok6;
-        game_over();
-    }
-}
-
-function changeImage7() {
-    if (ok7 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("20").src = "x.jpg";
-            matrix[2][0] = 1;
-        } else {
-            document.getElementById("20").src = "zero.jpg";
-            matrix[2][0] = 2;
-        }
-        ++numberOfMoves;
-        ++ok7;
-        game_over();
-    }
-}
-
-function changeImage8() {
-    if (ok8 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("21").src = "x.jpg";
-            matrix[2][1] = 1;
-        } else {
-            document.getElementById("21").src = "zero.jpg";
-            matrix[2][1] = 2;
-        }
-        ++numberOfMoves;
-        ++ok8;
-        game_over();
-    }
-}
-
-function changeImage9() {
-    if (ok9 == 0 && winner == "?") {
-        if (numberOfMoves % 2 != 0) {
-            document.getElementById("22").src = "x.jpg";
-            matrix[2][2] = 1;
-        } else {
-            document.getElementById("22").src = "zero.jpg";
-            matrix[2][2] = 2;
-        }
-        ++numberOfMoves;
-        ++ok9;
+        counts[photoId] = 1;
         gameOver();
+    }
+}
+
+function createMatrix(x, imageId) {
+    if (imageId == 1) {
+        matrix[0][0] = x;
+    } else if (imageId == 2) {
+        matrix[0][1] = x;
+    } else if (imageId == 3) {
+        matrix[0][2] = x;
+    } else if (imageId == 4) {
+        matrix[1][0] = x;
+    } else if (imageId == 5) {
+        matrix[1][1] = x;
+    } else if (imageId == 6) {
+         matrix[1][2] = x;
+    } else if (imageId == 7) {
+        matrix[2][0] = x;
+    } else if (imageId == 8) {
+        matrix[2][1] = x;
+    } else {
+        matrix[2][2] = x;
     }
 }
 

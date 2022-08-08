@@ -8,12 +8,12 @@ var winner = "?";
 
 
 function changeImage1() {
-    if (ok1 == 0) {
+    if (ok1 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("11").src = "x.jpg";
+            document.getElementById("00").src = "x.jpg";
             matrix[0][0] = 1;
         } else {
-            document.getElementById("11").src = "zero.jpg";
+            document.getElementById("00").src = "zero.jpg";
             matrix[0][0] = 2;
         }
         ++numberOfMoves;
@@ -23,12 +23,12 @@ function changeImage1() {
 }
 
 function changeImage2() {
-    if (ok2 == 0) {
+    if (ok2 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("12").src = "x.jpg";
+            document.getElementById("01").src = "x.jpg";
             matrix[0][1] = 1;
         } else {
-            document.getElementById("12").src = "zero.jpg";
+            document.getElementById("01").src = "zero.jpg";
             matrix[0][1] = 2;
         }
         ++numberOfMoves;
@@ -38,12 +38,12 @@ function changeImage2() {
 }
 
 function changeImage3() {
-    if (ok3 == 0) {
+    if (ok3 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("13").src = "x.jpg";
+            document.getElementById("02").src = "x.jpg";
             matrix[0][2] = 1;
         } else {
-            document.getElementById("13").src = "zero.jpg";
+            document.getElementById("02").src = "zero.jpg";
             matrix[0][2] = 2;
         }
         ++numberOfMoves;
@@ -53,12 +53,12 @@ function changeImage3() {
 }
 
 function changeImage4() {
-    if (ok4 == 0) {
+    if (ok4 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("21").src = "x.jpg";
+            document.getElementById("10").src = "x.jpg";
             matrix[1][0] = 1;
         } else {
-            document.getElementById("21").src = "zero.jpg";
+            document.getElementById("10").src = "zero.jpg";
             matrix[1][0] = 2;
         }
         ++numberOfMoves;
@@ -68,12 +68,12 @@ function changeImage4() {
 }
 
 function changeImage5() {
-    if (ok5 == 0) {
+    if (ok5 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("22").src = "x.jpg";
+            document.getElementById("11").src = "x.jpg";
             matrix[1][1] = 1;
         } else {
-            document.getElementById("22").src = "zero.jpg";
+            document.getElementById("11").src = "zero.jpg";
             matrix[1][1] = 2;
         }
         ++numberOfMoves;
@@ -83,12 +83,12 @@ function changeImage5() {
 }
 
 function changeImage6() {
-    if (ok6 == 0) {
+    if (ok6 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("23").src = "x.jpg";
+            document.getElementById("12").src = "x.jpg";
             matrix[1][2] = 1;
         } else {
-            document.getElementById("23").src = "zero.jpg";
+            document.getElementById("12").src = "zero.jpg";
             matrix[1][2] = 2;
         }
         ++numberOfMoves;
@@ -98,12 +98,12 @@ function changeImage6() {
 }
 
 function changeImage7() {
-    if (ok7 == 0) {
+    if (ok7 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("31").src = "x.jpg";
+            document.getElementById("20").src = "x.jpg";
             matrix[2][0] = 1;
         } else {
-            document.getElementById("31").src = "zero.jpg";
+            document.getElementById("20").src = "zero.jpg";
             matrix[2][0] = 2;
         }
         ++numberOfMoves;
@@ -113,12 +113,12 @@ function changeImage7() {
 }
 
 function changeImage8() {
-    if (ok8 == 0) {
+    if (ok8 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("32").src = "x.jpg";
+            document.getElementById("21").src = "x.jpg";
             matrix[2][1] = 1;
         } else {
-            document.getElementById("32").src = "zero.jpg";
+            document.getElementById("21").src = "zero.jpg";
             matrix[2][1] = 2;
         }
         ++numberOfMoves;
@@ -128,37 +128,37 @@ function changeImage8() {
 }
 
 function changeImage9() {
-    if (ok9 == 0) {
+    if (ok9 == 0 && winner == "?") {
         if (numberOfMoves % 2 != 0) {
-            document.getElementById("33").src = "x.jpg";
+            document.getElementById("22").src = "x.jpg";
             matrix[2][2] = 1;
         } else {
-            document.getElementById("33").src = "zero.jpg";
+            document.getElementById("22").src = "zero.jpg";
             matrix[2][2] = 2;
         }
         ++numberOfMoves;
         ++ok9;
-        game_overQ();
+        gameOver();
     }
 }
 
-function game_overQ() {
-    return winnerQ(matrix[0][0], matrix[0][1], matrix[0][2]) 
-       ||  winnerQ(matrix[1][0], matrix[1][1],matrix[1][2]) 
-       ||  winnerQ(matrix[2][0], matrix[2][1], matrix[2][2]) 
-       ||  winnerQ(matrix[0][0], matrix[1][0], matrix[2][0]) 
-       ||  winnerQ(matrix[0][1], matrix[1][1], matrix[2][1]) 
-       ||  winnerQ(matrix[0][2], matrix[1][2], matrix[2][2]) 
-       ||  winnerQ(matrix[0][0], matrix[1][1], matrix[2][2]) 
-       ||  winnerQ(matrix[2][0], matrix[1][1], matrix[0][2])
+function gameOver() {
+    return possibleWinner(matrix[0][0], matrix[0][1], matrix[0][2]) 
+       ||  possibleWinner(matrix[1][0], matrix[1][1], matrix[1][2]) 
+       ||  possibleWinner(matrix[2][0], matrix[2][1], matrix[2][2]) 
+       ||  possibleWinner(matrix[0][0], matrix[1][0], matrix[2][0]) 
+       ||  possibleWinner(matrix[0][1], matrix[1][1], matrix[2][1]) 
+       ||  possibleWinner(matrix[0][2], matrix[1][2], matrix[2][2]) 
+       ||  possibleWinner(matrix[0][0], matrix[1][1], matrix[2][2]) 
+       ||  possibleWinner(matrix[2][0], matrix[1][1], matrix[0][2])
        ||  draw(); 
 }
 
-function winnerQ(p1, p2, p3) {
-    if (p1 == -1) return false;
-    if (p1 != p2) return false;
-    if (p1 != p3) return false;
-    checkWinner(p1);
+function possibleWinner(element1, element2, element3) {
+    if (element1 == -1 || element1 != element2 || element1 != element3) {
+        return false;
+    }
+    checkWinner(element1);
     return true;
 }
 

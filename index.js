@@ -18,7 +18,7 @@ function changeImage1() {
         }
         ++numberOfMoves;
         ++ok1;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -33,7 +33,7 @@ function changeImage2() {
         }
         ++numberOfMoves;
         ++ok2;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -48,7 +48,7 @@ function changeImage3() {
         }
         ++numberOfMoves;
         ++ok3;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -63,7 +63,7 @@ function changeImage4() {
         }
         ++numberOfMoves;
         ++ok4;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -78,7 +78,7 @@ function changeImage5() {
         }
         ++numberOfMoves;
         ++ok5;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -93,7 +93,7 @@ function changeImage6() {
         }
         ++numberOfMoves;
         ++ok6;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -108,7 +108,7 @@ function changeImage7() {
         }
         ++numberOfMoves;
         ++ok7;
-        game_overQ();
+        game_over();
     }
 }
 
@@ -123,7 +123,7 @@ function changeImage8() {
         }
         ++numberOfMoves;
         ++ok8;
-        game_overQ();
+        game_over();
     }
 }
 
